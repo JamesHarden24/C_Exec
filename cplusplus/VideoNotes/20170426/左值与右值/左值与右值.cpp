@@ -43,6 +43,10 @@ int main()
     int *pnum(&num1);
     int* &rpnum(pnum);
 
+    int a = 10;   /* a在栈上 */
+    int & ra = a; /* 左值引用 */
+    int * &&pa = &a; /* && 右值引用 */
+
     system("pause");
     return 0;
 }
