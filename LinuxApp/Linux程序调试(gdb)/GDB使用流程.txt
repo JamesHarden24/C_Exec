@@ -1,0 +1,13 @@
+(1)编译生成可执行文件
+   gcc -g test.c -o test
+(2)启动GDB
+   gdb test
+(3)在main函数处设置断点
+   break main
+(4)运行程序
+   run
+(5)利用更加丰富的gdb命令对程序进行调试
+
+
+
+
