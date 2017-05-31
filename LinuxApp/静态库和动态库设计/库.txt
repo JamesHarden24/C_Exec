@@ -1,0 +1,33 @@
+
+Linux应用程序使用的主要函数库存放在/lib,/usr/lib目录下，
+其中采用"*.so.*"的方式命名的是动态库，而以"*.a"方式命名
+的是静态函数库。
+
+静态链接库
+(1)程序所要用到的库函数代码在连接时全部被拷贝到程序中。
+(2)导致的问题：如果在多核进程的内存中同时运行，并且使用了
+   相同的库函数，那么就会有多份拷贝，这就是空间浪费。
+
+使用静态库--编译选项
+(1)Linux下进行链接时，默认是链接动态库
+(2)如果需要使用静态库，需要使用选项  -static
+eg: gcc -static test.c -o test
+
+
+制作静态库
+(1)gcc -c mylib.c -o mylib.o
+(2)ar cqs libmylib.a mylib.o
+(3)将制作好的libmylib.a复制到/usr/lib目录下
+
+gcc 使用-lname 来指明要链接的库
+eg：gcc test.c -lmylib -o test
+
+
+动态函数库的制作
+(1)gcc -c mylib.c -o mylib.o
+(2)gcc -shared -fPIC mylib.o -o libmylib.so
+(3)将制作好的libmylib.so复制到/usr/lib目录下
+注：-fPIC 使输出的对象模块是按照可重定位地址方式生成的
+    -shared 指明生成动态链接库
+    
+    

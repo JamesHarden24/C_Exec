@@ -1,0 +1,14 @@
+【Core Dump 核心转存】
+当程序在运行过程中发生异常，这时Linux系统可以把程序出错时
+的内存内容存储在一个Core文件中，这种过程叫Core Dump。
+
+Segment fault 段错误
+在Linux系统中，默认是关闭core dump功能的，但是可以通过ulimit命令
+打开/关闭 core dump 功能
+打开：ulimit -c unlimited
+关闭：ulimit -c 0
+
+发生core dump之后，可以使用gdb进行查看core文件的内容，以定位程序出错的位置。
+用法：gdb 程序名 core文件名
+例子：gdb ./test test.core
+
