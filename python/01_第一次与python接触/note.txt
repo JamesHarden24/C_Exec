@@ -1,0 +1,6 @@
+(1)从IDLE启动python
+IDLE是一个Python Shell, shell的意思是“外壳”，基本上来说，就是一个通过键入文本与程序交互的途径！
+
+在2.x版本使用：print "I love Python"
+在3.x版本使用：print("I love Python")
+

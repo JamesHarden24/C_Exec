@@ -1,0 +1,68 @@
+什么是socket
+(1)socket可以看成是用户进程与内核网络协议栈的编程接口。
+(2)socket不仅是可以用于本机的进程间通信，还可以用于网络上不同主机的
+   进程间通信。
+
+IPv4套接口地址结构
+(1)IPv4套接字地址结构通常也成为“网际套接字地址结构”，它以“socket_in”命名，定义在头文件<netinet/in.h>
+struct sockaddr_in
+{
+    uint8_t        sin_len;
+    sa_family_t    sin_family; //***
+    in_port_t      sin_port;   //***
+    struct in_addr sin_addr;   //***
+    char           sin_zerop[8];
+};
+   <1>sin_len: 整个sockaddr_in结构体的长度，在4.3BSD-Reno版本之前的第一个成员是sin_family；
+   <2>sin_family: 指定该地址家族，在这里必须设为AF_INET
+   <3>sin_port: 端口
+   <4>sin_addr: IPv4的地址
+   <5>sin_zero: 暂不使用，一般设置为0
+
+通用地址结构用来指定与套接字关联的地址
+struct sockaddr
+{
+    uint8_t        sin_len;
+    sa_family_t    sin_family;
+    int_port_t     sin_port;
+    char           sa_data[4];
+};
+    <1>sin_len:    sockaddr的长度
+    <2>sin_family: 指定该地址家族
+    <3>sa_data:    由sin_family决定它的形式
+
+
+字节序：
+    <1>大端字节序：最高有效位存储于最低内存地址处，最低有效位存储于最高内存地址
+    <2>小端字节序：最高有效位存储于最高内存地址处，最高有效位存储于最低内存地址
+eg:  0x12345678
+     ------->>--------->>------>>------- 内存地址增长方向
+         12 34 56 78       大端字节序
+         78 56 34 12       小端字节序 
+         
+主机字节序：
+    不同的主机有不同的字节序，如x86为小端字节序，Motorola 6800为大端字节序，ARM为字节序可配置的。
+
+网络字节序：   
+    与大端字节序一致
+
+字节序转换函数：
+uint32_t htonl(uint32_t hostlong);
+uint16_t htons(uint16_t hostshort);
+uint32_t ntohl(uint32_t netlong);
+uint16_t ntohs(uint16_t netshort);
+说明：在上述的函数中，h代表host;n代表network,s代表short,l代表long
+
+地址转换函数
+#include <netinet/in.h>
+#include <arpa/inet.h>
+int inet_aton(const char *cp, strucr int_addr *inp);
+int_addr_t inet_addr(const char *cp);  /* 将点分十进制地址转换为32位的地址 */
+char *inet_ntoa(struct in_addr in);
+
+
+套接字类型
+(1)流式套接字(SOCK_STREAM):提供面向连接的、可靠的数据传输服务，数据无差错，无重复的发送，且按发送顺序接收。
+(2)数据报式套接字(SOCK_DGRAM):提供无连接服务，不提供无差错保证，数据可丢失或者重复，并且接收顺序混乱。
+(3)原始套接字(SOCK_RAW):
+
