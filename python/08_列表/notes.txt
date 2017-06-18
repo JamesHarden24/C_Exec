@@ -4,7 +4,35 @@
 [1, '小甲鱼', 3.14, [1, 2, 3]]
 >>> 
 
-向列表中添加元素
+向列表中添
 
 
+元组：戴上了枷锁的列表   其中的元素不能修改
 
+>>> list3
+[1, 2, 3, 5, 6, 8, 15, 37, 96]
+>>> list3.sort(reverse=True)
+>>> list3
+[96, 37, 15, 8, 6, 5, 3, 2, 1]
+>>> tuple1 = (1,2,3,4,5,6,7,8)
+>>> tuple1
+(1, 2, 3, 4, 5, 6, 7, 8)
+>>> tuple1[2]
+3
+>>> tuple1[4:]
+(5, 6, 7, 8)
+>>> temp = (1)
+>>> temp
+1
+>>> type(temp)
+<class 'int'>
+>>> temp1 = 1,2,3
+>>> type(temp1)
+<class 'tuple'>
+>>> 
+
+>>> temp = ('LeBron James', 'James Harden', 'Chris Paul', 'Kevin Durant', 'Kobe Bryant')
+>>> temp = temp[:2] + ('Chris Bosh',) + temp[2:]
+>>> temp
+('LeBron James', 'James Harden', 'Chris Bosh', 'Chris Paul', 'Kevin Durant', 'Kobe Bryant')
+>>> 

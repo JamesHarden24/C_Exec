@@ -1,0 +1,21 @@
+
+字符串的一些函数：
+capitalize()         把字符串的第一个字符改为大写
+casefold()           把整个字符串的所有字符改为小写
+center(width)        将字符串居中，并使用空格填充至长度width的新字符串
+count(sub[,start[,end]]) 返回sub在字符串里面出现的次数，start和end参数表示范围，可选。
+endswith(sub[,start[,end]])  检查字符串是否以sub字符串结束，如果是返回True，否则返回False，
+                     start和end参数表示范围，可选。
+expandtabs([tabsize=8])  把字符串的tab符号(\t)转换为空格，如果不指定参数，默认的空格数是tabsize=8
+find(sub[,start[,end]])  检测sub是否包含在字符串中，如果有则返回索引值，否则返回-1，start和end参数
+                     表示范围，可选。
+
+
+
+
+
+
+
+
+
+
