@@ -1,0 +1,47 @@
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 18:41:36) [MSC v.1900 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> '520' + '1314'
+'5201314'
+>>> a = 2.00000145
+>>> a
+2.00000145
+>>> a = 0.000000000000256
+>>> a
+2.56e-13
+>>> a = 15e10
+>>> s
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    s
+NameError: name 's' is not defined
+>>> as
+SyntaxError: invalid syntax
+>>> a
+150000000000.0
+>>> True + True
+2
+>>> True + False
+1
+>>> True / False
+Traceback (most recent call last):
+  File "<pyshell#11>", line 1, in <module>
+    True / False
+ZeroDivisionError: division by zero
+>>> a = 5.99
+>>> c = int(a)
+>>> c
+5
+>>> a = 5.99
+>>> c = str(a)
+>>> c
+'5.99'
+>>> type(c)\
+	 
+KeyboardInterrupt
+>>> type(c)
+<class 'str'>
+>>> isinstance(320.25, float)
+True
+>>> isinstance(32.025, bool)
+False
+>>> 

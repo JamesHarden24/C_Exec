@@ -6,7 +6,8 @@ if 条件:
 else:
 	条件为假(FALSE)，执行的操作。
 
-
+radom模块
+在radom模块里面，有函数randint()，可以返回一个随机的整数
 
 
 
