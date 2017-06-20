@@ -1,0 +1,65 @@
+
+
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 18:41:36) [MSC v.1900 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> def MyFirstFunction():
+	print('This is my first function!')
+	print('I am a Rookie')
+
+>>> MyFirstFunction()
+This is my first function!
+I am a Rookie
+>>> def MyAdd(num1, num2)
+SyntaxError: invalid syntax
+>>> def MyAdd(num1, num2):
+	ret = num1 + num2
+	print(ret)
+
+>>> MyAdd(123, 456)
+579
+>>> 
+
+函数文档: 
+>>> def MyFirstFunction(name):
+	'函数定义过程中的name是叫做形参'
+	#因为Ta只是一种形式，表示占据一个参数位置
+	print('传递进来的' + name + '叫做实参，因为Ta是具体的参数！')
+
+>>> MyFirstFunction('Rookie')
+传递进来的Rookie叫做实参，因为Ta是具体的参数！
+>>> MyFirstFunction.__doc__
+'函数定义过程中的name是叫做形参'
+>>> help(MyFirstFunction)
+Help on function MyFirstFunction in module __main__:
+
+MyFirstFunction(name)
+    函数定义过程中的name是叫做形参
+
+关键字参数:
+>>> def SaySome(name, words):
+	print(name + '->' + words)
+
+>>> SaySome('小甲鱼', '让编程改变参数')
+小甲鱼->让编程改变参数
+>>> SaySome(words = '让编程改变参数', name = '小甲鱼')
+小甲鱼->让编程改变参数
+>>> 
+
+默认参数:
+
+收集参数(可变长度参数):
+>>> def test(*params):
+	print('参数的长度是：', len(params))
+
+>>> test(1, 2, 3)
+参数的长度是： 3
+>>> 
+
+
+函数与过程:
+如果在函数中修改全局变量则会在函数中的全局变量为与全局变量同名的一个局部变量，修改的只是局部变量而已。
+所以不要在函数中试图修改全局变量的值。
+
+
+
+
