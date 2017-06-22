@@ -1,0 +1,36 @@
+>>> def FunX(x):
+	def FunY(y):
+		return x*y
+	return FunY
+
+>>> i = FunX(8)
+>>> i
+<function FunX.<locals>.FunY at 0x000000000323C598>
+>>> type(i)
+<class 'function'>
+>>> i(5)
+40
+>>> 
+
+
+>>> def Fun1():
+	x = [5]
+	def fun2():
+		x[0] *= x[0]
+		return x[0]
+	return fun2()
+
+>>> Fun1()
+25
+>>> 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+lambda表达式的作用
+Python写一些执行脚本时，使用lambda就可以省下定义函数的过程。
+
+
+例子：
+Python 3.6.1 (v3.6.1:69c0db5, Mar 21 2017, 18:41:36) [MSC v.1900 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> def ds(x):
+	return 2 * x + 1
+
+>>> ds(5)
+11
+>>> lambda x : 2 * x + 1
+<function <lambda> at 0x0000000001D23E18>
+>>> g = lambda x : 2 * x + 1
+>>> g(5)
+11
+>>> g = lambda x,y : x + y
+>>> g(4,5)
+9
+>>> 
+
+
+
+
+
+
+
+

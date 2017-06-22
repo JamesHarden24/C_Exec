@@ -1,0 +1,16 @@
+>>> filter(None, [1, 0, False, True])
+<filter object at 0x0000000002FB64A8>
+>>> list(filter(None, [1, 0, False, True]))
+[1, True]
+>>> def odd(x):
+	return x % 2
+
+>>> temp = range(10)
+>>> show = filter(odd, temp)
+>>> print(show)
+<filter object at 0x0000000002FB6E48>
+>>> list(show)
+[1, 3, 5, 7, 9]
+>>> list(filter(lambda x : x % 2, range(10)))
+[1, 3, 5, 7, 9]
+>>> 
